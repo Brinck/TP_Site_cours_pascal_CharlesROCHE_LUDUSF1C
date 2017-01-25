@@ -1,0 +1,165 @@
+<!--Document au format html5-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Pascal</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body>  
+    <header> 
+      <img src="images/fpc.jpg" alt="logo_fpc" class="Images"/>
+      <h1>Cours Pascal</h1>
+
+      <nav>
+      <ul>
+        <li id="TitreMenu">Menu</li>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="Chapitre_1.html">Chapitre 1 : Structure programme pascal</a></li>
+        <li><a href="Chapitre_2.html">Chapitre 2 : Variables et Constantes</a></li>
+        <li><a href="Chapitre_3.html">Chapitre 3 : Entrées et Sorties</a></li>
+        <li><a href="Chapitre_4.html">Chapitre 4 : Structures conditionnelles, boucles</a></li>
+        <li><a href="Chapitre_5.html">Chapitre 5 : Chaînes et caractères</a></li>
+        <li><a href="Chapitre_6.html">Chapitre 6 : Fonctions et Procédures</a></li>
+        <li><a href="Chapitre_7.html">Chapitre 7 : Tableaux et Types</a></li>
+      </ul>
+      </nav>
+    </header>
+    
+    </br>
+
+    <section>
+      <article>
+        <h2>Chapitre 5 : Chaînes et caractères</h2>
+      </article>
+
+      <article>
+        <h3> Caractères </h3>
+
+        <p>Un caractère est une variable de type Char qui prend 1 octet (= 8 bits) en mémoire. La table ASCII est un tableau de 256 caractères, numérotés de 0 à 255, où les 23 premiers sont des caractères de contrôle, associés à des fonctions de base de MS-DOS (Suppr, End, Inser, Enter, Esc, Tab, Shift...) et tous les autres sont directement affichables (lettres, ponctuations, symboles, caractères graphiques).</p>
+
+        <p>Dans un programme en Pascal, on peut travailler sur un caractère à partir de son numéro dans la table ASCII (avec la fonction Chr(n) ou #n) ou directement avec sa représentation entre apostrophes ''.</p>
+
+        <p><strong>Exemples :</strong></p>
+        
+        <p>Espace := ' ';
+        Lettre := #80;
+        Carac := Chr(102);</p></br>
+
+        <p><strong>Table ASCII :</strong></p>
+        <img src="images/ascii.gif" alt="tableau_ascii" class="Images"/></br>
+
+        <p>Var Lettre : Char;</p>
+
+        <p>Lorsqu'on donne une valeur à une variable de type Char, celle-ci doit être entre apostrophes. On peut aussi utiliser les fonctions Chr et Ord ou même une variable  String (voir plus loin) dont on prend un caractère à une position déterminée.</p>
+
+        <p>Lettre := Chaine[Position];</p></br>
+
+        <p><strong>Voyons à présent quelques fonctions :</strong></p>
+
+
+        <p>Upcase (k);</p>
+        
+        <p>Cette fonction convertit un caractère minuscule en MAJUSCULE.</p>
+
+        <p>for i := 1 to Lenght(s) do</br> 
+          &ensp;s[i] := Upcase(s[i]);</p></br>
+
+
+        <p>Chr (n);</p>
+
+        <p>Cette fonction renvoie le caractère d'indice n dans la table ASCII.</p>
+
+        <p>k := Chr(64);</p></br>
+
+
+        <p>Ord (k);</p>
+
+        <p>Cette fonction renvoie l'indice (en byte) correspondant au caractère k dans la table ASCII. C'est la fonction réciproque de Chr.</p>
+
+        <p>i := Ord('M');</p>
+      </article>
+
+      <article>
+        <h3>Chaînes de caractères</h3>
+
+        <p>Le type String définit des variables "chaînes de caractères" ayant au maximum 255 signes, ces derniers appartenant à la table ASCII. On peut cependant définir des chaînes dont la longueur maximale sera moindre (de 1 à 255). Le premier caractère de la chaîne a pour indice 1, le dernier a pour indice 255 (ou moins si spécifié lors de la déclaration).</p>
+
+        <p>Var </br>
+          &ensp;Chaine : String;</br>
+          &ensp;Telephone : String[10];   { Chaîne d'une longueur maximale de 10 caractères }</p>
+
+        <p>Lorsqu'une valeur est affectée à une variable chaîne de caractères, on procède comme pour un nombre mais cette valeur doit être entre apostrophes. Si cette valeur contient une apostrophe, celle-ci doit être doublée dans votre code.</p>
+
+        <p>Animal := 'l''abeille';</p></br>
+
+
+        <p><strong>Il est donc possible, une chaîne de caractères étant un tableau, de modifier un seul caractère de la chaîne grâce à la syntaxe suivante :</strong></p>
+
+        <p>Chaine[Index] := Lettre;</p></br>
+
+
+        <p>Program Exemple;</br>
+        Var </br>
+          &ensp;Nom : String;</br>
+        BEGIN</br>
+          &ensp;Nom := 'Etiévant';</br>
+          &ensp;Nom[2] := 'Z';</br>
+          &ensp;Nom[0] := Chr(4);</br>
+          &ensp;WriteLn(Nom);</br>
+          &ensp;Nom[0] := Chr(28);</br>
+          &ensp;Write(Nom,'-tagada');</br>
+        END.</p>
+
+        <p>L'exemple Exemple14 remplace la deuxième lettre de la variable Nom en un "Z" majuscule, puis spécifie que la variable ne contient plus que 4 caractères. Ainsi la valeur de la variable Nom est devenue : EZié. Mais après, on dit que la variable Nom a une longueur de 28 caractères et on s'aperçoit à l'écran que les caractères de rang supérieur à 4 ont été conservés ! Ce qui veut dire que la chaîne affichée n'est pas toujours la valeur totale de la chaîne réelle en mémoire.</p>
+
+        <p>Attention cependant aux chaînes déclarées de longueur spécifiée (voir chapitre 20 sur les types simples et structurés. Exemple : Type nom:String[20];) dont la longueur ne doit pas dépasser celle déclarée en début de programme.</p></br>
+
+
+        <p>Concat (s1,s2,s3,...,sn);</p>
+        
+        <p>Cette fonction concatène les chaînes de caractères spécifiées s1, s2, etc en une seule et même chaîne. On peut se passer de cette fonction grâce à l'opérateur + :  s1 + s2 + s3 + ... + sn.</p>
+
+        <p>s := Concat (s1,s2);</br>
+        s := s1 + s2;</p></br>
+
+
+        <p>Copy (s,i,j);</p>
+
+        <p>Cette fonction retourne de la chaîne de caractère s, un nombre j de caractères à partir de la position i (dans le sens de la lecture). Rappelons que i et j sont des entiers (Integer).</p></br>
+
+
+        <p>Delete (s,i,j);</p>
+
+        <p>Cette procédure supprime, dans la chaîne nommée s, un nombre j de caractères à partir de la position i.</p></br>
+
+
+        <p>Insert (s1,s2,i);</p>
+        
+        <p>Cette procédure insère la chaîne s1 dans la chaîne s2 à la position i.</p></br>
+
+
+        <p>Pos (s1,s2);</p>
+
+        <p>Cette fonction renvoie, sous forme de variable de type byte, la position de la chaîne s1 dans la chaîne s2. Si la chaîne s1 en est absente, alors cette fonction renvoie 0.</p></br>
+
+
+        <p>Str (n,s);</p>
+        
+        <p>Cette procédure convertit la variable numérique n en sa représentation chaîne telle qu'elle serait affichée par Write(Ln).</p></br>
+
+
+        <p>Val (s,n,Error);</p>
+
+        <p>Cette procédure convertit la chaîne de caractères s en un nombre (de type numérique simple) n et renvoie un code d'erreur error (de type integer) qui est égal à 0 si la conversion est possible.</p></br>
+      </article>
+    </section>
+
+    <footer>
+      <p>@Etudiant Ludus : Charles ROCHE</p>
+      <img src="images/Ludus.gif" alt="logo_Ludus" class="Images"/>
+    </footer>
+    
+    </body>
+</html>

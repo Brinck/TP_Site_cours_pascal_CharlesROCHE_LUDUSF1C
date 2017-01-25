@@ -1,0 +1,165 @@
+<!--Document au format html5-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Pascal</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body>  
+    <header> 
+      <img src="images/fpc.jpg" alt="logo_fpc" class="Images"/>
+      <h1>Cours Pascal</h1>
+
+      <nav>
+      <ul>
+        <li id="TitreMenu">Menu</li>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="Chapitre_1.html">Chapitre 1 : Structure programme pascal</a></li>
+        <li><a href="Chapitre_2.html">Chapitre 2 : Variables et Constantes</a></li>
+        <li><a href="Chapitre_3.html">Chapitre 3 : Entrées et Sorties</a></li>
+        <li><a href="Chapitre_4.html">Chapitre 4 : Structures conditionnelles, boucles</a></li>
+        <li><a href="Chapitre_5.html">Chapitre 5 : Chaînes et caractères</a></li>
+        <li><a href="Chapitre_6.html">Chapitre 6 : Fonctions et Procédures</a></li>
+        <li><a href="Chapitre_7.html">Chapitre 7 : Tableaux et Types</a></li>
+      </ul>
+      </nav>
+    </header>
+    
+    </br>
+
+    <section>
+      <article>
+        <h2>Chapitre 7 : Tableaux et Types</h2>
+      </article>
+
+      <article>
+        <h3>Tableaux</h3>
+
+        <p>Il est courant d'utiliser des tableaux afin d'y stocker temporairement des données. Ainsi, une donnée peut être en relation avec 1, 2 ou 3 (ou plus) entrées. L'intérêt du tableau est de pouvoir stocker en mémoire des données que l'on pourra retouver grace à d'autres valeurs à l'aide de boucles, de formules, d'algorythmes. On peut utiliser un tableau afin de représenter l'état d'un échiquier, le résultat d'une fonction mathématique... Il est possible d'introduire des variables de presque tous les types au sein d'un tableau : Char, Integer, Real, String, Byte, Record, etc.</p>
+
+        <p>Un tableau, tout comme une variable quelconque doit être déclaré dans la partie déclarative du programme. On doit toujours spécifier le type des variables qui seront introduites dans le tableau. </p>
+        
+        <p><strong>Syntaxe :</strong></p>
+
+        <p>Var nom_du_tableau : Array[MinDim..MaxDim] Of type ;</p></br>
+
+        <p><strong>Note :</strong> les valeurs MinDim et MaxDim doivent être des Integer ou des Char (c'est-à-dire de type énuméré). Avec MinDim inférieur à MaxDim. L'un ou les deux peuvent êtres négatifs. Le type des variables qui seront mises dans le tableau devra être celui là : type.</p>
+
+        <p><strong>Remarque :</strong> il ne peut y avoir qu'un seul type de variable au sein d'un tableau.</p></br>
+
+        <p><strong>Exemples :</strong></br>
+        
+        Var tab1 : Array[0..10] Of Byte ; </br> 
+        Var tab2 : Array[1..100] Of Integer ; </br> 
+        Var tab3 : Array[-10..10] Of Real ; </br> 
+        Var tab4 : Array[50..60] Of String ; </br> 
+        Var tab5 : Array['A'..'S'] Of Char ;</br> 
+        Var tab6 : Array['a'..'z'] Of Extended ;</p>
+
+        <p><strong>Remarque :</strong> que les bornes d'un tableau soient déclarées par des valeurs de type caractère (Char) n'interdit pas pour autant de remplir le tableau de nombres à virgules (voir le tab6 ci-dessus). Car en effet, le type des bornes d'un tableau n'influe aucunement sur le type des variables contenues dans le tableau. Et réciproquement, le type des variables d'un tableau de renseigne en rien sur le type des bornes ayant servi à sa déclaration.</p></br>
+        
+        <p>Un tableau peut avoir plusieurs dimensions. Si toutefois, vous imposez trop de dimensions ou des index trop importants, une erreur lors de la compilation vous dira : Error 22: Structure too large.</p>
+        <p><strong>Syntaxes :</strong></p>
+
+        <p>Var nom_du_tableau : Array[MinDim1..MaxDim1, MinDim2..MaxDim2] Of type ;</br>
+        Var nom_du_tableau : Array[MinDim1..MaxDim1, MinDim2..MaxDim2, MinDim3..MaxDim3] Of type ;</p>
+
+        <p><strong>Exemples :</strong></br> 
+        Var tab1 : Array[0..10, 0..10] Of Byte ; </br> 
+        Var tab2 : Array[0..10, 0..100] Of Integer ; </br> 
+        Var tab3 : Array[-10..10, -10..10] Of Real ; </br> 
+        Var tab4 : Array[5..7, 20..22] Of String ; </br> 
+        Var tab5 : Array[1..10, 1..10, 1..10, 0..2] Of Char ;</p></br> 
+
+        <p>La technique pour introduire des valeurs dans un tableau est relativement simple. Il suffit de procéder comme pour une variable normale, sauf qu'il ne faut pas oublier de spécifier la position indexqui indique la place de la valeur dans la dimension du tableau. </p>
+        <p><strong>Syntaxes :</strong></p>
+
+        <p>nom_du_tableau[index] := valeur ;</br> 
+        nom_du_tableau[index1, index2] := valeur ;</p>
+
+        <p><strong>Note :</strong> la variable index doit nécessairement être du même type énuméré que celui utilisé pour la déclaration du tableau.</p></br>
+
+        <p>La déclaration de tableau en tant que constante nécessite de forcer le type (le type tableau bien sûr) à la déclaration.</p>
+
+        <p><strong>Syntaxe :</strong></p>
+
+        <p>Const </br>
+        a : Array[0..3] Of Byte = (103, 8, 20, 14) ;</br>
+        b : Array[-3..3] Of Char = ('e', '5', '&', 'Z', 'z', ' ', #80) ;</br>
+        c : Array[1..3, 1..3] Of Integer = ((200, 23, 107), (1234, 0, 5), (1, 2, 3)) ;</br>
+        d : Array[1..26] Of Char = 'abcdefghijklmnopqrstuvwxyz';</p></br>
+
+        <p><strong>Atention :</strong> cette forme parenthèsée est réservée aux constantes car elle ne permet pas de passer un tableau en paramètre à une procédure ou d'initialiser un tableau.</p>
+      </article>
+
+      <article>
+        <h3>Types</h3>
+
+        <h3>Type simple</h3>
+        <p>On déclare les nouveaux types simple de variable dans la partie déclarative du programme et avant la déclaration des variables utilisant ce nouveau type.</p></br>
+
+        <p><strong>Syntaxe :</strong></br>
+        Type nom_du_type = nouveau_type ;</p>
+        
+        <p><strong>Exemples :</strong></br>
+        Type nom = string[20] ;</br>
+        Type entier = integer ;</br>
+        Type tableau = array [1..100] of byte ;</p>
+        
+        <p>Program  ;</br>
+        Type chaine = string[20] ;</br>
+        Var nom : chaine ;</br>
+            &ensp;age : byte ;</br>
+        BEGIN</br>
+            &ensp;Write('Entrez votre nom : ') ;</br>
+            &ensp;ReadLn(nom) ;</br>
+            &ensp;Write('Entrez votre âge : ') ;</br>
+            &ensp;ReadLn(age) ;</br>
+            &ensp;WriteLn('Votre nom est : ',nom,' et votre âge : ',age) ;</br>
+        END.</p></br>
+        
+        <p>Ce programme exemple 24 utilise un nouveau type appelé chaine qui sert à déclarer la variable nom.</p></br>
+
+        <h3>Type structurés (enregistrement)</h3>
+
+        <p>On peut être amené à utiliser des types structurés car dans une seule variable on peut réussir à caser des sous-variables nommées champs.<p>
+
+        <p><strong>Syntaxe :</strong></p>
+
+        <p>Type nom_du_type = Record </br>
+          &ensp;sous_type1 : nouveau_type1 ;</br>
+          &ensp;sous_type2 : nouveau_type2 ;</br>
+          &ensp;sous_type3 : nouveau_type3 ;</br>
+        End ;</p>
+
+        <p><strong>Note :</strong> les champs sont placés dans un bloc Record ... End ; et un sous-type peut lui-même être de type Record.</p></br>
+
+        <p><strong>Syntaxe :</strong></p>
+
+        <p>Type nom_du_type = Record </br>
+          &ensp;sous_type1 : nouveau_type1 ;</br>
+          &ensp;sous_type2 = Record ;</br>
+            &emsp;sous_type2_1 : nouveau_type2 ;
+            &emsp;sous_type2_2 : nouveau_type3 ;</br>
+            &emsp;sous_type2_3 : nouveau_type4 ;</br>
+          &ensp;End ;</br>
+        End ;</p></br>
+
+        <p><strong>Note :</strong> une constante ne peut pas être de type complexe (Array, Record...) mais seulement de type simple.</p>
+
+        <p><strong>Note :</strong> on ne peut pas afficher le contenu d'une variable structurées sans passer par une syntaxe spécifiant le champs dont on veut connaître la valeur.</p>
+
+        <p><strong>Note :</strong> les champs d'une variable de type structuré peuvent être de tout type (même tableau) sauf de type fichier (Text, File, File OF x).</p>
+
+      </article>
+    </section>
+
+    <footer>
+      <p>@Etudiant Ludus : Charles ROCHE</p>
+      <img src="images/Ludus.gif" alt="logo_Ludus" class="Images"/>
+    </footer>
+    
+    </body>
+</html>

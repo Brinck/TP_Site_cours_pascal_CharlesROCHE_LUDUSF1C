@@ -1,0 +1,278 @@
+<!--Document au format html5-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Pascal</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body>  
+    <header> 
+      <img src="images/fpc.jpg" alt="logo_fpc" class="Images"/>
+      <h1>Cours Pascal</h1>
+
+      <nav>
+      <ul>
+        <li id="TitreMenu">Menu</li>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="Chapitre_1.html">Chapitre 1 : Structure programme pascal</a></li>
+        <li><a href="Chapitre_2.html">Chapitre 2 : Variables et Constantes</a></li>
+        <li><a href="Chapitre_3.html">Chapitre 3 : Entrées et Sorties</a></li>
+        <li><a href="Chapitre_4.html">Chapitre 4 : Structures conditionnelles, boucles</a></li>
+        <li><a href="Chapitre_5.html">Chapitre 5 : Chaînes et caractères</a></li>
+        <li><a href="Chapitre_6.html">Chapitre 6 : Fonctions et Procédures</a></li>
+        <li><a href="Chapitre_7.html">Chapitre 7 : Tableaux et Types</a></li>
+      </ul>
+      </nav>
+    </header>
+    
+    </br>
+
+    <section>
+      <article>
+        <h2>Chapitre 4 : Structures conditionnelles, boucles</h2>
+      </article>
+
+      <article>
+        <h3> if...then...</h3>
+        <p><strong>Une instruction conditionnelle permet d'exécuter des instructions seulement dans une certaine condition.</strong></p>
+
+        <p>var</br>
+            &ensp; age : integer;</p>
+
+        <p>begin</br>
+            &ensp; writeln('Quel est ton âge?');</br>
+            &ensp; readln(age); </p>
+    
+            <p>&ensp; if (age < 18) then</p>
+    
+                <p>&emsp; writeln('Tu es mineur.');</p>
+    
+        end.</p></br>
+        <p>Ainsi, dans l'exemple ci-dessus, le programme indiquera à l'utilisateur qu’il est mineur seulement s'il son âge est strictement inférieur à 18.</p></br>
+
+        <p><strong>On peut également préciser ce que le programme doit faire dans le cas contraire avec un "else" :</strong></p>
+        <p>var </br>
+            &ensp;age : integer;</p>
+
+        <p>begin</br>
+            &ensp; writeln('Quel est ton âge?');</br>
+            &ensp; readln(age);</p>
+    
+            <p>&ensp; if age < 18 then</br>
+            &ensp; begin</br>
+                &emsp; writeln('Tu es mineur.')</br>
+            &ensp; end</br>
+            &ensp; else</br>
+            &ensp; begin</br>
+                &emsp; writeln('Tu es majeur.')</br>
+            &ensp; end</br>
+        end.</p>
+      </article>
+
+      <article>
+        <h3>case...of...</h3>
+        <p>Imaginons un cas dans lequel il nous faudrait utiliser une longue série de if en cascade, celle-ci peut devenir rapidement difficile à lire. <strong>Pour cela, il existe une autre structure : le case of.</strong></p>
+        <p>var </br>
+            &ensp; age : integer;</p>
+
+        <p>begin</br>
+            &ensp; writeln('Quel est ton âge?');</br>
+            &ensp; readln(age);</p>
+    
+            <p>&ensp; case age of</br>
+            &ensp; 1 : writeln('un');</br>
+            &ensp; 2 : writeln('deux');</br>
+            &ensp; 3 : writeln('trois');</br>
+            &ensp; 4 : writeln('quatre');</br>
+            &ensp; 5 : writeln('cinq');</br>
+            &ensp; 6 : writeln('six');</br>
+            &ensp; 7 : writeln('sept');</br>
+            &ensp; 8 : writeln('huit');</br>
+            &ensp; 9 : writeln('neuf');</br>
+            &ensp; else writeln('je veux un chiffre')</br>
+            &ensp; end</br>
+        end.</p></br>
+        <p>Et voila comment le case of peut fournir un code beaucoup plus compréhensible et compact que les if en cascade.<p>
+      </article>
+
+      <article>
+        <h3> Liste des opérateurs</h3>
+
+        <p>= égal à</br>
+        < strictement inférieur à</br>
+        <=  inférieur ou égal à</br>
+        > strictement supérieur à</br>
+        >=  supérieur ou égal à</br>
+        <>  différent de</br>
+        AND le "et" logique</br>
+        OR  le "ou" inclusif</br>
+        XOR le "ou" exclusif</br>
+        NOT le "non" logique </p></br>
+        <p>Le XOR consiste à vérifier si une et une seule des deux conditions est vraie. "A xor B" est l'équivalent de "soit A soit B".</p>
+      </article>
+
+      <article>
+        <h3> while...do...</h3>
+
+        <p>Cette instruction signifie "tant que". Elle permet de répéter l'exécution d'une instruction de boucle I :</p>
+
+        <p>while B do I;</p></br>
+
+        <p>B est une expression booléenne.</br>
+        (*) B est évaluée. Si B est vraie, alors I est exécutée, et on recommence depuis (*).</p>
+
+        <p><strong>Remarques</strong></br>
+        - Les variables de l'expression B doivent être initialisées avant le while, pour que au premier passage B puisse être évalué.</br>
+        - Le while continue de boucler tant que B n'est pas faux. Pour éviter une boucle infinie, qui < plante > le programme, il faut obligatoirement que dans I il y aie une sous-instruction rendant B faux à un moment donné.</br>
+        <strong>Exemple : Programme calculant la somme des nombres de 1 à 100.</strong></p>
+
+        <p>PROGRAM Somme;</p>
+
+        <p>VAR</br>
+          &ensp;s, k : integer;</p>
+
+        <p>BEGIN</br>
+          &ensp;s := 0;</br>
+          &ensp;k := 1;</br>
+          &ensp;while k <= 100 do</br>
+          &ensp;begin</br>
+              &emsp;s := s + k;</br>
+              &emsp;k := k + 1;</br>
+          &ensp;end;</br>
+          &ensp;writeln (s);</br>
+        END.</p></br>
+
+        <p><strong>- On se sert souvent d'un booléen dans une boucle while :</strong></p>
+
+        <p>continuer := true;</br>
+        while (k <= 100) and continuer do</br>
+        begin</br>
+        { ... }</br>
+        if ( ... ) then continuer := false;</br>
+        end;</p>
+      </article>
+
+      <article>
+        <h3>repeat...until...</h3>
+
+        <p>Cette instruction signifie "répéter . . . jusqu'à".<strong> Elle permet comme le while de répéter l'exécution d'une instruction de boucle I :</strong></p>
+
+        <p>repeat I; until B;</p></br>
+        
+        <p>B est une expression booléenne. (*) I est exécutée, puis B est évaluée. Si B est vraie, alors on s'arrête, sinon on recommence depuis (*).</p></br>
+
+        <p><strong>Différences avec while</strong></p>
+
+        <p>- L'instruction I est exécutée au moins une fois.</br>
+        - Le test B étant évalué après I, B peut être affecté dans I. Pour le while il faut avoir initialisé B avant.</br>
+        - Pas besoin d'encadrer un groupe d'instructions par un begin end, le repeat until joue déjà ce rôle.</br>
+        <strong>Exemple Le while de Somme s'écrit avec un repeat :</strong></p>
+
+        <p>s := 0;</br> 
+        k := 1;</br>
+        repeat</br> 
+           &ensp;s := s + k;</br> 
+           &ensp;k := k + 1;</br> 
+           &ensp;until k > 100;</p></br>
+
+        <p><strong>- Traduction d'une boucle while B do I; avec un repeat :</strong><p>
+
+        <p>if B then</br>
+        repeat</br>
+        I;</br>
+        until not B;</p></br>
+
+        <p><strong>- On se sert souvent d'un booléen dans une boucle repeat :</strong></p>
+
+        <p>repeat</br>
+        { ... }</br>
+        arreter := ... ;</br>
+        until (k > 100) or arreter;</p>
+      </article>
+
+      <article>
+        <h3>for...to...do...</h3>
+
+        <p>Cette instruction signifie "pour". <strong> Elle permet de répéter l'exécution d'une instruction de boucle I :</strong></p>
+
+        <p>for k := E1 to E2 do I;</p></br>
+
+        <p>k est le compteur de boucle, E1 et E2 sont les bornes inférieures et supérieures.</br>
+        E1 et E2 sont des expressions ordinales, du même type que la variable k.</p>
+
+        <p>E1 et E2 sont d'abord évaluées, puis k prend la valeur E1. (*) Si k <= E2, alors I est exécutée, puis k est incrémenté de 1, et on recommence depuis (*).</p>
+
+        <p><strong>- Pour avoir une boucle décroissante, on écrit :</strong></p>
+        
+        <p>for k := E2 downto E1 do I;</p></br>
+
+        <p><strong>- On peut écrire une boucle for k := E1 to E2 do I; avec un while :</strong></p>
+
+        <p>k := E1; { init de k }</br>
+        m := E2; { on evalue E2 une fois pour toutes }</br>
+        while k <= m do</br>
+        begin</br>
+          &ensp;I;</br>
+          &ensp;k := k+1;</br>
+        end;</p></br>
+
+        <p><strong>- On en déduit l'écriture d'une boucle for k := E1 to E2 do I; avec un repeat :</strong></p>
+
+        <p>k := E1; { init de k }</br>
+        m := E2; { on evalue E2 une fois pour toutes }</br>
+        if k <= m then</br>
+          &ensp;repeat</br>
+            &emsp;I;</br>
+            &emsp;k := k+1;</br>
+          &ensp;until k > m;</p></br>
+
+        <p><strong>Remarques</strong></br>
+        - L'instruction de boucle I n'est pas exécutée du tout si E1 > E2.</br>
+        - Modifier pendant la boucle la valeur de E1 ou E2 n'a pas d'effet.</br>
+        - Il est totalement interdit de modifier la valeur du compteur k dans le corps de la boucle.</br>
+        - L'incrément de 1 n'est pas modifiable (contrairement au Basic avec step).</br>
+        - A la fin de l'exécution de la boucle, la variable k redevient indéterminée : elle a une valeur qui dépend du compilateur. Par exemple sous Delphi, elle vaut E2+1, et sous Turbo Pascal 7.0, elle vaut E2.</p>
+
+        <p>Exemple d'application des règles : dire la valeur affichée [ c'est 10240 ]</p>
+
+        <p>a := 5;</br>
+        for i := a to a+10 do </br>
+          &ensp;a := a*2;</br>
+        writeln(a);</p></br>
+
+        <p><strong>- On peut bien entendu imbriquer des boucles.</strong></p>
+
+        <p>PROGRAM table_multiplication;</p>
+
+        <p>VAR</br>
+          &ensp;i, j : integer;</p>
+
+        <p>BEGIN</br>
+          &ensp;for i := 1 to 10 do</br>
+          &ensp;begin</br>
+          &ensp;for j := 1 to 10 do </br>
+            &emsp;write (i*j : 3); </br>
+          &ensp;writeln; </br>
+          &ensp;end; </br>
+        END.</p>
+      </article>
+
+      <article>
+        <h3>Choix de la boucle</h3>
+
+        <p><strong>La règle est simple (l'apprendre par coeur) :</strong></p>
+
+        <p>Si le nombre d'itérations est connu a priori, alors on utilise un for.
+        Sinon : on utilise le repeat (quand il y a toujours au moins une itération), ou le while (quand le nombre d'itérations peut être nul).</p>
+      </article>
+    </section>
+
+    <footer>
+      <p>@Etudiant Ludus : Charles ROCHE</p>
+      <img src="images/Ludus.gif" alt="logo_Ludus" class="Images"/>
+    </footer>
+    
+    </body>
+</html>

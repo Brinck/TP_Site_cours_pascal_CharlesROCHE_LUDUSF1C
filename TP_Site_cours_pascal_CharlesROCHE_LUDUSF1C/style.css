@@ -1,0 +1,127 @@
+/*
+Theme Name: Theme site Cours Pascal
+Theme URI: Pascal.com
+Author: Charles Roche
+Description: Theme css site web Cours Pascal
+Version: 1.0
+License: Cours Pascal
+Licence URL: Pascal.com
+Text Domain: Cours Pascal
+*/
+
+/*Police d'écriture*/
+@font-face{/*ajout de la police alex-brush*/
+	font-family: 'alex-brush';
+	src:url('alex-brush/AlexBrush-Regular.ttf');
+}
+
+/*Police de page par défaut*/
+*{ /*définition de la police de la page par défaut*/
+    font-family:'Shrikband', cursive, impact, sans-serif;
+}
+
+/*Titre de page*/
+h1{ /* entourer le titre d'un cadre rouge avec des bords arrondis, un fond blanc et une ombre portée noire, définition de la taille du titre avec une couleur noire et une ombre portée grise */
+
+    text-align:center;
+    color:black;
+    text-shadow: 2px 2px 4px grey;
+    border:3px inset;
+    border-color:red;
+    border-radius:10px 10px 10px 10px;
+    background-color: white;
+    box-shadow:7px 7px 0px black;
+    width:30%;
+    margin:0 auto;
+
+}
+
+/*Titre dans les articles*/
+h2{ /*aligne les titres dans les articles au centre et les souligne*/
+    text-align: center;
+    text-decoration: underline;
+}
+
+/*Sous-titre dans les articles*/
+h3{ /*aligne les sous-titres dans les articles au centre et les souligne*/
+    text-align: center;
+    text-decoration: underline;
+}
+
+/*Corps de la page*/
+body{ /*définition d'un fond d'écran qui couvre la page et qui se répète ou d'un fond blanc si l'image ne se charge pas */
+
+	color:white;
+	background-image:url("images/background.png"); 
+	background-repeat:repeat; 
+	background-size:cover; 
+}
+
+/* Corps du texte contenant les cours séparés en article*/
+article{ /* création d'une bordure rouge et d'un fond blanc pour chaque article, espacement de la marge des articles pour qu'ils ne soient pas recouverts par le menu, définition de la couleur du texte en noir */
+
+    text-align: justify;
+    border:4px solid;  
+    border-color: red;
+    background-color:white;  
+    margin-left: 240px; 
+    color:black; 
+}
+
+/*Propriétés des images*/
+.Images{ /* création d'une flex box pour les images, les centre entre elles mais les centre également par rapport au texte */
+    display:flex;
+    margin:auto;
+    align-items: center;
+}
+
+/*Pied de page*/
+footer{ /*centrer le texte du pied de page et faire un fond noir sur toute la partie du pied de page*/
+
+    text-align: center; 
+    background-color: black;
+}
+
+/*Définition d'un alinea*/
+.alinea{
+
+	margin-left: =25em;
+}
+
+/* Menu Gauche */
+#TitreMenu{ /* définit la taille, la police d'écriture et la position du titre du menu vertical*/
+
+    color:red;
+    font-family:'alex-brush','Shrikband', cursive, impact, sans-serif;
+    font-size:40px;
+    font-style:oblique;
+    font-weight:bold;
+    text-align:center;
+    text-decoration: underline;
+
+}
+
+li a { /* placement du texte au centre des cellules avec un espacement par rapport aux bords de la cellule pour qu'elles ne soient pas trop petites*/
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align:center;
+}
+
+li a:hover { /* quand on passe le pointeur dessus, les cellules du menu deviennent rouges et le texte devient noir */
+    background-color: red;
+    color: black;
+}
+
+ul { /* crée un menu à gauche fixe à gauche de la page sur fond noir avec un bord blanc fin*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    background-color: black;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    border: 1px solid white;
+}

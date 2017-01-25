@@ -1,0 +1,88 @@
+<!--Document au format html5-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Pascal</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body>  
+    <header> 
+      <img src="images/fpc.jpg" alt="logo_fpc" class="Images"/>
+      <h1>Cours Pascal</h1>
+
+      <nav>
+      <ul>
+        <li id="TitreMenu">Menu</li>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="Chapitre_1.html">Chapitre 1 : Structure programme pascal</a></li>
+        <li><a href="Chapitre_2.html">Chapitre 2 : Variables et Constantes</a></li>
+        <li><a href="Chapitre_3.html">Chapitre 3 : Entrées et Sorties</a></li>
+        <li><a href="Chapitre_4.html">Chapitre 4 : Structures conditionnelles, boucles</a></li>
+        <li><a href="Chapitre_5.html">Chapitre 5 : Chaînes et caractères</a></li>
+        <li><a href="Chapitre_6.html">Chapitre 6 : Fonctions et Procédures</a></li>
+        <li><a href="Chapitre_7.html">Chapitre 7 : Tableaux et Types</a></li>
+      </ul>
+      </nav>
+    </header>
+    
+    </br>
+
+    <section>
+      <article>
+        <h2> Chapitre 3 : Entrées et Sorties</h2>
+      </article>
+        
+      <article>
+        <h3>Lire et écrire avec (read et write)</h3>
+        <p><strong>Tout programme qui se respecte doit pouvoir interagir avec l'utilisateur. Il doit donc pouvoir lire ce que lui donne l'utilisateur, et lui écrire des messages. En mode console, ceci est possible avec les procédures "read" et "write".</strong></p>
+
+        <p>var</br>
+            &ensp;a, b : integer;</p>
+
+        <p>Begin</br>
+            &ensp; read(a);</br>
+            &ensp; read(b);</br>
+            &ensp; write(a + b);</br>
+        End.</p></br>
+        <p>Ce code attend donc qu'on lui donne 2 entiers via l'entré standard (habituellement le clavier) et écrit le résultat de l'addition sur la sortie standard (habituellement l'écran).<p>
+      </article>
+
+      <article>
+        <h3>Différence entre write et writeln</h3>
+        <p><strong>Si on remplace write par writeln, le programme ajoute un saut de ligne après l’affichage de la chaine de caractère. Si on désire simplement sauter une ligne, il est possible d'appeler writeln sans paramètre.</strong></p>
+
+        <p>Begin</br>
+            &ensp; writeln('1ere ligne');</br>
+            &ensp; writeln;</br>
+            &ensp; write('2eme ligne');</br>
+        End.</p></br>
+        <p>Dans cet exemple, le programme va afficher 1ere ligne puis sauter une ligne avec un seul appel à writeln. Ensuite, un nouveau saut de ligne est effectué, avant d'afficher 2eme ligne sans ajouter un dernier saut de ligne.</p>
+      </article>
+
+      <article>
+        <h3> Différence entre read et readln</h3>
+        <p><strong>Lorsque l'utilisateur entre des valeurs sur une même ligne de l'entrée standard, read lit la 1re valeur et l'affecte à la variable qui lui a été envoyé en paramètre. Readln fait quelque chose en plus, il supprime ce qui suit.</br>
+        Reprenons le code précédent :</strong></p>
+
+        <p>var</br>
+            &ensp; a, b : integer;</p>
+
+        <p>Begin</br>
+            &ensp; writeln('Je veux deux entiers.');</br>
+            &ensp; read(a);</br>
+            &ensp; read(b);</br>
+            &ensp; write(a + b);</br>
+        End.</p></br>
+        <p>Le programme demande qu'on lui donne deux entiers grâce à deux read. Dans ce cas, les deux possibilité suivantes donne un résultat identique alors qu'avec readln seul la 2e possibilité aurait été possible, car après avoir lu ce qu’il a besoin (juste le premier entier) il supprime le reste de ce qui a été fournit par l'utilisateur. Il imposerai ainsi une deuxième saisie.<p>
+      </article>
+    </section>
+
+    <footer>
+      <p>@Etudiant Ludus : Charles ROCHE</p>
+      <img src="images/Ludus.gif" alt="logo_Ludus" class="Images"/>
+    </footer>
+    
+    </body>
+</html>

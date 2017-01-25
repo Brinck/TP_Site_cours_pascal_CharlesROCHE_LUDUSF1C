@@ -1,0 +1,104 @@
+<!--Document au format html5-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Pascal</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body>  
+    <header> 
+      <img src="images/fpc.jpg" alt="logo_fpc" class="Images"/>
+      <h1>Cours Pascal</h1>
+
+      <nav>
+      <ul>
+        <li id="TitreMenu">Menu</li>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="Chapitre_1.html">Chapitre 1 : Structure programme pascal</a></li>
+        <li><a href="Chapitre_2.html">Chapitre 2 : Variables et Constantes</a></li>
+        <li><a href="Chapitre_3.html">Chapitre 3 : Entrées et Sorties</a></li>
+        <li><a href="Chapitre_4.html">Chapitre 4 : Structures conditionnelles, boucles</a></li>
+        <li><a href="Chapitre_5.html">Chapitre 5 : Chaînes et caractères</a></li>
+        <li><a href="Chapitre_6.html">Chapitre 6 : Fonctions et Procédures</a></li>
+        <li><a href="Chapitre_7.html">Chapitre 7 : Tableaux et Types</a></li>
+      </ul>
+      </nav>
+    </header>
+    
+    </br>
+
+    <section>
+      <article>
+        <h2>Chapitre 6 : Fonctions et procédures</h2>
+      </article>
+
+      <article>
+      	<h3>Définition de fonctions</h3>
+
+      	<p><strong>Syntaxe</strong></p>
+      	<p>Program nom_de_programme ;</br>
+		fonction nom_de_fonction( noms de variables : types ) : type;</br>
+		Begin</br>
+		...</br>
+		commandes</br>
+		nom_de_fonction := résultat;</br>
+		...</br>
+		End ;<p></br>
+
+		<p><strong>Utilisation</strong></p>
+		<p>Une fonction est une procédure "qui ramène un résultat" d'un type simple qu'on précise dans la déclaration de la fonction.
+		Pour "ramener" le résultat, il suffit d'ajouter une ligne où on affecte le résultat au nom de la fonction</p></br>
+
+		<p><strong>Programme principal</strong></p>
+		<p>BEGIN</br>
+		variable := nom_de_fonction ( noms d'autres variables ou leurs valeurs ) ;</br>
+		END.</p>
+      </article>
+
+      <article>
+      	<h3>Définition de procédures</h3>
+
+      	<p><strong>Syntaxe</strong></p>
+      	<p>Procedure NOM(Variable1 : TYPE; Variable2 : TYPE; ...);</br>
+		Begin</br>
+   			&ensp;{ instructions, par exemple ici on affiche les deux variables }</br>
+   			&ensp;WriteLn(Variable1);</br>
+   			&ensp;WriteLn(Variable2);</br>
+		End;</p></br>
+
+
+		<p><strong>Utilisation</strong></p>
+		<p>L'utilisation la plus courante est lorsqu'on répète le segment définit dans la procédure plus d’une fois. Et c’est une forme de commentaire non véritable puisqu’il permet la clarification du programme pour le lecteur du code source.</p>
+
+		<p>Généralement, les procédures sont inventées par le programmeur. Mais il existe également le type automatique. C'est-à-dire les procédures contenues dans une unité prédéfinie.</p></br>
+
+
+		<p><strong>Programme principal</strong></p>
+		<p>Program LeProgramme1;<p>
+
+		<p>Procedure Proc1( ... );</br>
+		Begin</br>
+			&ensp;{...}</br>
+		End;<p>
+
+		<p>Procedure Proc2( ... );</br>
+		Begin</br>
+   			&ensp;{...}</p>br>
+		End;<p>
+
+		<p>Begin</br>
+   			&ensp;Proc1; { appel de la première procédure }</br>
+   			&ensp;Proc2; { appel de la deuxième procédure }</br>
+		End.</p>
+      </article>
+    </section>
+
+    <footer>
+      <p>@Etudiant Ludus : Charles ROCHE</p>
+      <img src="images/Ludus.gif" alt="logo_Ludus" class="Images"/>
+    </footer>
+    
+    </body>
+</html>
